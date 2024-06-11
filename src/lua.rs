@@ -3604,6 +3604,9 @@ unsafe fn load_from_std_lib(state: *mut ffi::lua_State, libs: StdLib) -> Result<
             requiref(state, ffi::LUA_FFILIBNAME, ffi::luaopen_ffi, 1)?;
             ffi::lua_pop(state, 1);
         }
+
+        #[cfg(feature = "embedded")]
+        ffi::luaL_embedded(state);
     }
 
     Ok(())

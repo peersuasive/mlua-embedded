@@ -40,4 +40,7 @@ extern "C-unwind" {
 
     // open all builtin libraries
     pub fn luaL_openlibs(L: *mut lua_State);
+
+    #[cfg(feature = "embedded")]
+    pub fn luaL_embedded(L: *mut lua_State);
 }

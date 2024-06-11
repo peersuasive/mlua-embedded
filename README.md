@@ -1,6 +1,8 @@
 # mlua
 [![Build Status]][github-actions] [![Latest Version]][crates.io] [![API Documentation]][docs.rs] [![Coverage Status]][codecov.io] ![MSRV]
 
+This fork allows lua C modules to be statically embedded with luajit by using [luajit-src-rs-embedded](https://github.com/peersuasive/luajit-src-rs-embedded) instead of [luajit-src-rs](https://github.com/mlua-rs/luajit-src-rs). This is useful when we can't compile such modules on a target host.
+
 [Build Status]: https://github.com/khvzak/mlua/workflows/CI/badge.svg
 [github-actions]: https://github.com/khvzak/mlua/actions
 [Latest Version]: https://img.shields.io/crates/v/mlua.svg
@@ -57,6 +59,7 @@ Below is a list of the available feature flags. By default `mlua` does not enabl
 * `macros`: enable procedural macros (such as `chunk!`)
 * `parking_lot`: support UserData types wrapped in [parking_lot]'s primitives (`Arc<Mutex>` and `Arc<RwLock>`)
 * `unstable`: enable **unstable** features. The public API of these features may break between releases.
+* `embedded`: enable embedded modules. This is still a work in progress.
 
 [5.4]: https://www.lua.org/manual/5.4/manual.html
 [5.3]: https://www.lua.org/manual/5.3/manual.html

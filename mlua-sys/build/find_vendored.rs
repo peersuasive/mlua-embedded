@@ -15,7 +15,8 @@ pub fn probe_lua() {
 
     #[cfg(feature = "luajit")]
     let artifacts = luajit_src::Build::new()
-        .lua52compat(cfg!(feature = "luajit52"))
+        .lua52compat(cfg!(any(feature = "luajit52", feature = "embedded")))
+        .embedded(cfg!(feature = "embedded"))
         .build();
 
     #[cfg(feature = "luau")]
