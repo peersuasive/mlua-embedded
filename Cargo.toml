@@ -1,5 +1,5 @@
 [package]
-name = "mlua"
+name = "mlua-embedded"
 version = "0.9.7" # remember to update mlua_derive
 authors = ["Aleksandr Orlenko <zxteam@pm.me>", "kyren <catherine@kyju.org>"]
 rust-version = "1.71"
